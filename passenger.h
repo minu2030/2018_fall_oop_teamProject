@@ -3,7 +3,7 @@
 #include "User.h"
 using namespace std;
 
-class passenger : public User
+class Passenger : public User
 {
 private:
 	string startAddr;
@@ -12,8 +12,8 @@ private:
 	bool isHost;
 
 public:
-	passenger(User user);
-	passenger();
+	Passenger(User user);
+	Passenger();
 
 	string getStartAddr(){ return startAddr;}
 	string getdestAddr(){ return destAddr;}

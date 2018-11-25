@@ -18,8 +18,6 @@ Graph::Graph(int vn) :vn(vn)
 
 }
 
-
-
 Graph::~Graph(void)
 
 {

@@ -1,12 +1,12 @@
 #include "stdafx.h"
-#include "passenger.h"
+#include "Passenger.h"
 #include <string>
 
-passenger::passenger()
+Passenger::Passenger()
 {
 
 }
-passenger::passenger(User user)
+Passenger::Passenger(User user)
 {
 	setName(user.getName());
 	setCash(user.getCash());
