@@ -9,13 +9,13 @@ class PassengerController
 {
 
 private:
-	std::vector<passenger> passengerData;
-	std::vector<passenger> passengerlist;
+	std::vector<Passenger> passengerData;
+	std::vector<Passenger> passengerList;
 	
 public:
 	PassengerController();
 	bool passengerControllerUserInfo(User user,int i,int v);
-	passenger getpassengerList(int i);
-	int returnSize(){ return passengerlist.size(); }
+	Passenger getPassengerList(int i);
+	int returnSize(){ return passengerList.size(); }
 };
 

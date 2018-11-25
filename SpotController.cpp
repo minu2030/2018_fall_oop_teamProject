@@ -6,9 +6,9 @@ SpotController::SpotController() {
 	passengers.reserve(10);
 }
 
-bool SpotController::addSpot(char* startSpot) {
+bool SpotController::addSpot(string startSpot) {
 	try {
-		if (strcmp(startSpot, NULL)) {
+		if (!isContain(startSpot)) {
 			throw "올바르지 않은 출발 장소입니다.";
 		}
 		Spot *addedSpot = new Spot(startSpot);
@@ -19,13 +19,11 @@ bool SpotController::addSpot(char* startSpot) {
 	}
 }
 
-Spot SpotController::getSpot(char* startSpot) {
+Spot SpotController::getSpot(string startSpot) {
 	try {
 		for (int i = 0; i < spots.size(); i++) {
-			if (!(strcmp(spots[i].getStartSpot, startSpot))) {
-				Spot temp = spots[i];
-				//Spots.erase(i);
-				return temp;
+			if (isContain(startSpot)) {
+				return spots[i];
 			}
 		}
 		throw "해당하는 출발지의 Spot이 없습니다.";
@@ -34,3 +32,14 @@ Spot SpotController::getSpot(char* startSpot) {
 		cout << errorStr << endl;
 	}
 }
+
+bool SpotController::isContain(string startSpot)
+{
+	for (int i = 0; i < spots.size(); i++) {
+		if (!strcmp(startSpot.c_str(), spots[i].getStartSpot().c_str())) {
+			return true;
+		}
+	}
+	return false;
+}
+

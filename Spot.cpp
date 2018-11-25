@@ -4,15 +4,15 @@
 #include <string>
 
 using namespace std;
-Spot::Spot(char* startSpot) {
+Spot::Spot(string startSpot) {
 	passengers.reserve(10);
 	setStartSpot(startSpot);
 }
 
 bool Spot::addPassenger(Passenger* addedPassenger) {
 	try {
-		if (!addedPassenger->check()) {
-			throw "Passenger 정보가 적절하지 않습니다.";
+		if (check(addedPassenger)) {
+			throw "출발지 정보가 같지 않습니다.";
 		}
 		passengers.push_back(*addedPassenger);
 	}
@@ -56,7 +56,7 @@ Passenger Spot::getPassengers(int i)
 	return passengers.at(i);
 }
 
-void Spot::setStartSpot(char* _startSpot) {
+void Spot::setStartSpot(string _startSpot) {
 	startSpot = _startSpot;
 }
 
@@ -68,4 +68,11 @@ string Spot::getStartSpot()
 int Spot::getNumOfPassengers()
 {
 	return passengers.size();
+}
+
+bool Spot::check(Passenger * added)
+{
+	if(!strcmp(added->getStartAddr, getStartSpot().c_str()))
+		return false;
+	return true;
 }

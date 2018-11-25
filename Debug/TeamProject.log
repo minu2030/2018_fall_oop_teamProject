@@ -1,0 +1,84 @@
+﻿  SpotView.cpp
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(11): error C2061: 구문 오류: 식별자 'Passenger'
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(12): error C2061: 구문 오류: 식별자 'Passenger'
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(13): error C3646: 'getPassengers': 알 수 없는 재정의 지정자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(13): error C2059: 구문 오류: '('
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(13): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(14): error C3646: 'getPassengers': 알 수 없는 재정의 지정자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(14): error C2059: 구문 오류: '('
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(14): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(22): error C2065: 'Passenger': 선언되지 않은 식별자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(22): error C2923: 'std::vector': 'Passenger'은(는) '_Ty' 매개 변수에 대한 올바른 템플릿 형식 인수가 아닙니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(22): error C3203: 'allocator': 특수화되지 않은 클래스 템플릿은(는) 템플릿 매개 변수 '_Alloc'에 대한 템플릿 인수로 사용할 수 없습니다. 실제 형식이 필요합니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(23): warning C4624: 'Spot': 소멸자가 암시적으로 삭제된 것으로 정의되었습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spotview.cpp(11): error C2039: 'getPassengers': 'Spot'의 멤버가 아닙니다.
+  c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(8): note: 'Spot' 선언을 참조하십시오.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spotview.cpp(11): error C2228: '.getName' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  SpotController.cpp
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(11): error C2061: 구문 오류: 식별자 'Passenger'
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(12): error C2061: 구문 오류: 식별자 'Passenger'
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(13): error C3646: 'getPassengers': 알 수 없는 재정의 지정자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(13): error C2059: 구문 오류: '('
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(13): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(14): error C3646: 'getPassengers': 알 수 없는 재정의 지정자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(14): error C2059: 구문 오류: '('
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(14): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(22): error C2065: 'Passenger': 선언되지 않은 식별자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(22): error C2923: 'std::vector': 'Passenger'은(는) '_Ty' 매개 변수에 대한 올바른 템플릿 형식 인수가 아닙니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(22): error C3203: 'allocator': 특수화되지 않은 클래스 템플릿은(는) 템플릿 매개 변수 '_Alloc'에 대한 템플릿 인수로 사용할 수 없습니다. 실제 형식이 필요합니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(23): warning C4624: 'Spot': 소멸자가 암시적으로 삭제된 것으로 정의되었습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spotcontroller.h(14): error C2065: 'Passenger': 선언되지 않은 식별자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spotcontroller.h(14): error C2923: 'std::vector': 'Passenger'은(는) '_Ty' 매개 변수에 대한 올바른 템플릿 형식 인수가 아닙니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spotcontroller.h(14): error C3203: 'allocator': 특수화되지 않은 클래스 템플릿은(는) 템플릿 매개 변수 '_Alloc'에 대한 템플릿 인수로 사용할 수 없습니다. 실제 형식이 필요합니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spotcontroller.h(15): warning C4624: 'SpotController': 소멸자가 암시적으로 삭제된 것으로 정의되었습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spotcontroller.cpp(4): error C2512: 'std::vector': 사용할 수 있는 적절한 기본 생성자가 없습니다.
+  c:\program files (x86)\visual studio 2015\vc\include\vector(679): note: 'std::vector' 선언을 참조하십시오.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spotcontroller.cpp(6): error C2662: 'void std::vector<_Ty,_Alloc>::reserve(_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)': 'this' 포인터를 'std::vector'에서 'std::vector<_Ty,_Alloc> &'(으)로 변환할 수 없습니다.
+  c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spotcontroller.cpp(6): note: 원인: 'std::vector'에서 'std::vector<_Ty,_Alloc>'(으)로 변환할 수 없습니다.
+  c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spotcontroller.cpp(6): note: 변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spotcontroller.cpp(24): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spotcontroller.cpp(25): error C3867: 'Spot::getStartSpot': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.
+  Spot.cpp
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(11): error C2061: 구문 오류: 식별자 'Passenger'
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(12): error C2061: 구문 오류: 식별자 'Passenger'
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(13): error C3646: 'getPassengers': 알 수 없는 재정의 지정자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(13): error C2059: 구문 오류: '('
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(13): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(14): error C3646: 'getPassengers': 알 수 없는 재정의 지정자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(14): error C2059: 구문 오류: '('
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(14): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(22): error C2065: 'Passenger': 선언되지 않은 식별자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(22): error C2923: 'std::vector': 'Passenger'은(는) '_Ty' 매개 변수에 대한 올바른 템플릿 형식 인수가 아닙니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(22): error C3203: 'allocator': 특수화되지 않은 클래스 템플릿은(는) 템플릿 매개 변수 '_Alloc'에 대한 템플릿 인수로 사용할 수 없습니다. 실제 형식이 필요합니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(23): warning C4624: 'Spot': 소멸자가 암시적으로 삭제된 것으로 정의되었습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(7): error C2512: 'std::vector': 사용할 수 있는 적절한 기본 생성자가 없습니다.
+  c:\program files (x86)\visual studio 2015\vc\include\vector(679): note: 'std::vector' 선언을 참조하십시오.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(8): error C2662: 'void std::vector<_Ty,_Alloc>::reserve(_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)': 'this' 포인터를 'std::vector'에서 'std::vector<_Ty,_Alloc> &'(으)로 변환할 수 없습니다.
+  c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(8): note: 원인: 'std::vector'에서 'std::vector<_Ty,_Alloc>'(으)로 변환할 수 없습니다.
+  c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(8): note: 변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(12): error C2065: 'Passenger': 선언되지 않은 식별자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(12): error C2065: 'addedPassenger': 선언되지 않은 식별자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(12): error C2761: 'bool Spot::addPassenger(void)': 멤버 함수를 재선언할 수 없습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(12): error C2448: 'Spot::addPassenger': 함수 스타일 이니셜라이저가 함수 정의처럼 나타납니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(26): error C2065: 'Passenger': 선언되지 않은 식별자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(26): error C2065: 'removedPassenger': 선언되지 않은 식별자입니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(26): error C2761: 'bool Spot::removePassenger(void)': 멤버 함수를 재선언할 수 없습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(27): error C2448: 'Spot::removePassenger': 함수 스타일 이니셜라이저가 함수 정의처럼 나타납니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(45): error C2039: 'getPassengers': 'Spot'의 멤버가 아닙니다.
+  c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(8): note: 'Spot' 선언을 참조하십시오.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(45): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(45): error C2146: 구문 오류: ';'이(가) 'getPassengers' 식별자 앞에 없습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(46): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(46): error C2447: '{': 함수 헤더가 없습니다. 이전 스타일의 형식 목록입니까?
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(54): error C2039: 'getPassengers': 'Spot'의 멤버가 아닙니다.
+  c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.h(8): note: 'Spot' 선언을 참조하십시오.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(54): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(54): error C2086: 'int Passenger': 재정의
+  c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(45): note: 'Passenger' 선언을 참조하십시오.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(54): error C2146: 구문 오류: ';'이(가) 'getPassengers' 식별자 앞에 없습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(55): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(55): error C2447: '{': 함수 헤더가 없습니다. 이전 스타일의 형식 목록입니까?
+c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(70): error C2662: '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': 'this' 포인터를 'std::vector'에서 'const std::vector<_Ty,_Alloc> &'(으)로 변환할 수 없습니다.
+  c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(70): note: 원인: 'std::vector'에서 'const std::vector<_Ty,_Alloc>'(으)로 변환할 수 없습니다.
+  c:\users\태 완\documents\visual studio 2015\projects\teamproject\teamproject\spot.cpp(70): note: 변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+  코드를 생성하고 있습니다...

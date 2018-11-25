@@ -16,12 +16,12 @@ public:
 	Passenger();
 
 	string getStartAddr(){ return startAddr;}
-	string getdestAddr(){ return destAddr;}
+	string getDestAddr(){ return destAddr;}
 	int getToPay(){ return toPay; }
 	bool getIsHost(){ return isHost; }
 
 	void setStartAddr(string _startAddr){ startAddr = _startAddr; }
-	void setdestAddr(string _destAddr){ destAddr = _destAddr; }
+	void setDestAddr(string _destAddr){ destAddr = _destAddr; }
 	void setToPay(int _toPay){ toPay = _toPay; }
 	void setIsHost(bool _isHost){ isHost = _isHost; }
 };

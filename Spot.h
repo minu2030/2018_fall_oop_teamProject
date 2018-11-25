@@ -7,14 +7,15 @@
 
 class Spot {
 public:
-	Spot(char* startSpot);
+	Spot(string startSpot);
 	bool addPassenger(Passenger* addedPassenger);
 	bool removePassenger(Passenger* removedPassenger);
 	Passenger getPassengers(string passengerName);
 	Passenger getPassengers(int i);
-	void setStartSpot(char* name);
+	void setStartSpot(string name);
 	string getStartSpot();
 	int getNumOfPassengers();
+	bool check(Passenger* added);
 
 private:
 	//const static int DEFAULT_CAPACITY = 10;

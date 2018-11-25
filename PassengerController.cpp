@@ -15,7 +15,7 @@ PassengerController::PassengerController()
 	infile.open("passenger.txt");
 	while (!infile.eof())
 	{
-		passenger passenger;
+		Passenger passenger;
 		getline(infile, name, '\n');
 		if (!strcmp(name.c_str(),"NULL"))
 		{
@@ -26,14 +26,14 @@ PassengerController::PassengerController()
 		getline(infile, _startAddr, '\n');
 		passenger.setStartAddr(_startAddr);
 		getline(infile, _destAddr, '\n');
-		passenger.setdestAddr(_destAddr);
+		passenger.setDestAddr(_destAddr);
 		passengerData.insert(passengerData.begin() + i, passenger);
 		i++;
 	}
 }
 bool PassengerController::passengerControllerUserInfo(User user,int i,int v)
 {
-		passenger passenger(user);
+		Passenger passenger(user);
 		
 		if (passengerData.at(i).getStartAddr() == "")
 		{
@@ -41,15 +41,15 @@ bool PassengerController::passengerControllerUserInfo(User user,int i,int v)
 		}
 		passenger.setStartAddr(passengerData.at(i).getStartAddr());
 
-		passenger.setdestAddr(passengerData.at(i).getdestAddr());
+		passenger.setDestAddr(passengerData.at(i).getDestAddr());
 
-		passengerlist.insert(passengerlist.begin()+v, passenger);
+		passengerList.insert(passengerList.begin()+v, passenger);
 
 		return true;
 
 }
 
-passenger PassengerController::getpassengerList(int i)
+Passenger PassengerController::getPassengerList(int i)
 {
-	return passengerlist.at(i);
+	return passengerList.at(i);
 }

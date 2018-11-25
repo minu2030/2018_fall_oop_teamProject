@@ -2,12 +2,15 @@
 #define SPOTCONTROLLER_H
 #include "Spot.h"
 #include "Passenger.h"
+#include "string"
 
+using namespace std;
 class SpotController {
 public:
 	SpotController();
-	bool addSpot(char* startSpot);
-	Spot getSpot(char* startSpot);
+	bool addSpot(string startSpot);
+	Spot getSpot(string startSpot);
+	bool isContain(string startSpot);
 
 private:
 	vector<Spot> spots;
