@@ -2,17 +2,19 @@
 #include <fstream>
 #include <iostream>
 #include "PassengerController.h"
+#include "UserController.h"
 
 using namespace std;
 
-PassengerController::PassengerController()
+PassengerController::PassengerController(int size)
 {
 	fstream infile;
 	string _startAddr;
 	string _destAddr;
 	string name;
+	_size = 0;
 	int i = 0;
-	infile.open("passenger.txt");
+	infile.open("C:/Users/rlajd/Desktop/passenger.txt");
 	while (!infile.eof())
 	{
 		Passenger passenger;
@@ -28,8 +30,10 @@ PassengerController::PassengerController()
 		getline(infile, _destAddr, '\n');
 		passenger.setDestAddr(_destAddr);
 		passengerData.insert(passengerData.begin() + i, passenger);
-		i++;
+		i++;	
 	}
+
+	passengerData.reserve(size);
 }
 bool PassengerController::passengerControllerUserInfo(User user,int i,int v)
 {
@@ -45,11 +49,34 @@ bool PassengerController::passengerControllerUserInfo(User user,int i,int v)
 
 		passengerList.insert(passengerList.begin()+v, passenger);
 
+		_size++;
 		return true;
-
 }
 
 Passenger* PassengerController::getPassengerList(int i)
 {
 	return &passengerList.at(i);
+}
+
+void PassengerController::InputPassenger(User user, string start, string dest)
+{
+	Passenger passenger(user);
+	int boolean = 0;
+	passenger.setStartAddr(start);
+	passenger.setDestAddr(dest);
+	//유저번호에 맞게 입력된 정보를 저장한다.
+	passengerData.insert(passengerData.begin() + user.getusernumber(), passenger);
+		for (int i = 0; i < passengerList.size();i++)
+		{
+			if (passengerList.at(i).getusernumber() == user.getusernumber())
+			{
+				passengerList.erase(passengerList.begin() + i);
+				passengerList.insert(passengerList.begin() + i, passenger);
+				boolean = 1;
+			}
+		}
+		if (boolean == 0){
+			_size++;
+			passengerList.push_back(passenger);
+		}
 }

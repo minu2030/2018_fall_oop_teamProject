@@ -20,7 +20,7 @@ public:
 	void setPhoneNumber(string num){number = num;}
 	int getCash(){return cash;}
 	void setCash(int num){ cash = num; }
-	int getusernumber(){ return cash; }
+	int getusernumber(){ return usernumber; }
 	void setusernumber(int num){ usernumber = num; }
 
 };

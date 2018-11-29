@@ -8,11 +8,12 @@ class UserController
 {
 private:
 	std::vector<User> list;
+	int _size;
 
 public:
 	UserController();
+	int size(){ return _size; }
 	void ControllerUserInfo();
 	User getList(int i);
-	int userSize(){ return list.size(); }
 };
 

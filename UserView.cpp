@@ -15,6 +15,7 @@ void UserView::printUser(UserController u,int i)
 			cout <<" 사용자 이름 : " << u.getList(i).getName() << endl;
 			cout << " 사용자 전화번호 : " << u.getList(i).getPhoneNumber() << endl;
 			cout << " Cash : " << u.getList(i).getCash() << endl;
+			cout << " UserNumber : " << u.getList(i).getusernumber() << endl;
 }
 
 
