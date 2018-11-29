@@ -9,7 +9,7 @@ class SpotController {
 public:
 	SpotController();
 	bool addSpot(string startSpot);
-	Spot getSpot(string startSpot);
+	Spot* getSpot(string startSpot);
 	bool isContain(string startSpot);
 
 private:

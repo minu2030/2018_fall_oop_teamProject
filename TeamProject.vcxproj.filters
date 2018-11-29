@@ -15,6 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Graph.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Passenger.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="PassengerController.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="PassengerView.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="Spot.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -24,13 +36,10 @@
     <ClCompile Include="SpotView.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Graph.cpp">
+    <ClCompile Include="stdafx.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="PassengerController.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="PassengerView.cpp">
+    <ClCompile Include="TermProject.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="User.cpp">
@@ -42,11 +51,20 @@
     <ClCompile Include="UserView.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Passenger.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Graph.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Passenger.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="PassengerController.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="PassengerView.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
     <ClInclude Include="Spot.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -56,13 +74,10 @@
     <ClInclude Include="SpotView.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Graph.h">
+    <ClInclude Include="stdafx.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="PassengerController.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="PassengerView.h">
+    <ClInclude Include="targetver.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="User.h">
@@ -74,16 +89,5 @@
     <ClInclude Include="UserView.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Passenger.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="passenger.txt">
-      <Filter>소스 파일</Filter>
-    </Text>
-    <Text Include="userInfo.txt">
-      <Filter>소스 파일</Filter>
-    </Text>
   </ItemGroup>
 </Project>

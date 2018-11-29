@@ -49,7 +49,7 @@ bool PassengerController::passengerControllerUserInfo(User user,int i,int v)
 
 }
 
-Passenger PassengerController::getPassengerList(int i)
+Passenger* PassengerController::getPassengerList(int i)
 {
-	return passengerList.at(i);
+	return &passengerList.at(i);
 }

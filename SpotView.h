@@ -4,7 +4,7 @@
 
 class SpotView {
 public:
-	void printStartSpot(Spot spot);
-	void printPassengers(Spot spot, int i);
+	void printStartSpot(Spot* spot);
+	void printPassengers(Spot* spot, int i);
 };
 #endif

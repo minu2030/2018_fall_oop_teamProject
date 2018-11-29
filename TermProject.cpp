@@ -5,6 +5,9 @@
 #include "UserView.h"
 #include "PassengerController.h"
 #include "PassengerView.h"
+#include "SpotController.h"
+#include "Spot.h"
+#include "SpotView.h"
 #include <iostream>
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -55,7 +58,15 @@ int _tmain(int argc, _TCHAR* argv[])
 		pa++;
 	}
 	//승객의 정보는 유저번호순으로 입력된다고 가정합니다.
+	SpotController spotController;
+	SpotView spotView;
 	
+	spotController.addSpot("속초");
+	spotController.getSpot("속초")->addPassenger(PassengerController.getPassengerList(0));
+	spotView.printStartSpot(spotController.getSpot("속초"));
+	
+	spotView.printPassengers(spotController.getSpot("속초"), 0);
+	system("pause");
 	return 0;
 }
 

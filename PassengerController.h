@@ -15,7 +15,7 @@ private:
 public:
 	PassengerController();
 	bool passengerControllerUserInfo(User user,int i,int v);
-	Passenger getPassengerList(int i);
+	Passenger* getPassengerList(int i);
 	int returnSize(){ return passengerList.size(); }
 };
 

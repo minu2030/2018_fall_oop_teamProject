@@ -10,8 +10,8 @@ public:
 	Spot(string startSpot);
 	bool addPassenger(Passenger* addedPassenger);
 	bool removePassenger(Passenger* removedPassenger);
-	Passenger getPassengers(string passengerName);
-	Passenger getPassengers(int i);
+	Passenger* getPassengers(string passengerName);
+	Passenger* getPassengers(int i);
 	void setStartSpot(string name);
 	string getStartSpot();
 	int getNumOfPassengers();

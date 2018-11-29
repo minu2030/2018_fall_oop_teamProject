@@ -18,6 +18,34 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="Passenger.cpp" />
+    <ClCompile Include="PassengerController.cpp" />
+    <ClCompile Include="PassengerView.cpp" />
+    <ClCompile Include="Spot.cpp" />
+    <ClCompile Include="SpotController.cpp" />
+    <ClCompile Include="SpotView.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="TermProject.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="UserController.cpp" />
+    <ClCompile Include="UserView.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Graph.h" />
+    <ClInclude Include="Passenger.h" />
+    <ClInclude Include="PassengerController.h" />
+    <ClInclude Include="PassengerView.h" />
+    <ClInclude Include="Spot.h" />
+    <ClInclude Include="SpotController.h" />
+    <ClInclude Include="SpotView.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="UserController.h" />
+    <ClInclude Include="UserView.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{ECA86518-BE2C-4670-9D0D-58D9EC0FE834}</ProjectGuid>
     <RootNamespace>TeamProject</RootNamespace>
@@ -109,34 +137,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Graph.cpp" />
-    <ClCompile Include="Passenger.cpp" />
-    <ClCompile Include="PassengerController.cpp" />
-    <ClCompile Include="PassengerView.cpp" />
-    <ClCompile Include="Spot.cpp" />
-    <ClCompile Include="SpotController.cpp" />
-    <ClCompile Include="SpotView.cpp" />
-    <ClCompile Include="User.cpp" />
-    <ClCompile Include="UserController.cpp" />
-    <ClCompile Include="UserView.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Graph.h" />
-    <ClInclude Include="Passenger.h" />
-    <ClInclude Include="PassengerController.h" />
-    <ClInclude Include="PassengerView.h" />
-    <ClInclude Include="Spot.h" />
-    <ClInclude Include="SpotController.h" />
-    <ClInclude Include="SpotView.h" />
-    <ClInclude Include="User.h" />
-    <ClInclude Include="UserController.h" />
-    <ClInclude Include="UserView.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="passenger.txt" />
-    <Text Include="userInfo.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
