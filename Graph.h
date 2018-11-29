@@ -42,17 +42,8 @@ public:
 	
 	int findMin(int arr[], int size);		//최소값을 찾아주는 함수
 
-	int getCost(int len) {
-		return 900 * len;
-	}
+	int originalLength(Passenger* ps);		//원래 가야할 길이 구해주는 함수
 };
 
 
 #endif // !GRAPH_H
-
-
-/*
-int findMinWay(int start, int dest1, int dest2);	//최소경로 찾아주는 함수
-int findMinWay(int start, int dest1, int dest2, int dest3);
-int findMinWay(int start, int dest1, int dest2, int dest3, int dest4);
-*/

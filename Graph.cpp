@@ -1,6 +1,6 @@
 #include "Graph.h"
 #include <string.h>
-#include "Passenger.h"
+
 
 
 Graph::Graph(int vn) :vn(vn)
@@ -19,20 +19,13 @@ Graph::Graph(int vn) :vn(vn)
 
 }
 
-
-
 Graph::~Graph(void)
 
 {
-
 	for (int i = 0; i < vn; i++)
-
 	{
-
 		delete[] matrix[i];//매트릭스 [i-row]  메모리 소멸
-
 	}
-
 	delete[] matrix;//매트릭스 메모리 해제     
 
 }
@@ -85,34 +78,32 @@ Graph* Graph::makeGraph(string addr) {
 	}
 }
 
-/*
-int Graph::findMinWay(int start, Passenger* ps , Passenger* ps1) {
-	int arr[2];
-	int dest1 = convertEdge(ps->getDestAddr());
-	int dest2 = convertEdge(ps1->getDestAddr());
 
-	arr[0] = matrix[start][dest1] + matrix[dest1][dest2];
+int Graph::findMinWay( Passenger* p1 , Passenger* p2) {
+	
+	int start = convertEdge(p1->getStartAddr());	//스타트변수 저장
+	
+
+	int arr[2];		//2x1 = 1
+	int dest1 = convertEdge(p1->getDestAddr());		//도착지1 저장
+	int dest2 = convertEdge(p2->getDestAddr());		//도착지2 저장
+
+	arr[0] = matrix[start][dest1] + matrix[dest1][dest2];	//배열에 넣고
 	arr[1] = matrix[start][dest2] + matrix[dest2][dest1];
 
-}
-*/
+	int length = findMin(arr, sizeof(arr) / sizeof(int));	//길이저장
 
 
-int Graph::findMinWay(int start, int dest1, int dest2) {
-	int arr[2];
-	arr[0] = matrix[start][dest1] + matrix[dest1][dest2];
-	arr[1] = matrix[start][dest2] + matrix[dest2][dest1];
-
-	int index = findMin(arr, sizeof(arr) / sizeof(int));
-
-	printf("최소 거리 : %d \n", arr[index]);
-	return index;
+	return length;
 }
 
+int Graph::findMinWay(Passenger* p1, Passenger* p2, Passenger* p3) {
+	int arr[6];		//3x2x1 = 6
+	int start = convertEdge(p1->getStartAddr());	//시작점 저장
+	int dest1 = convertEdge(p1->getDestAddr());
+	int dest2 = convertEdge(p2->getDestAddr());
+	int dest3 = convertEdge(p3->getDestAddr());
 
-
-int Graph::findMinWay(int start, int dest1, int dest2, int dest3) {
-	int arr[6];
 	arr[0] = matrix[start][dest1] + matrix[dest1][dest2] + matrix[dest2][dest3];
 	arr[1] = matrix[start][dest1] + matrix[dest1][dest3] + matrix[dest3][dest2];
 	arr[2] = matrix[start][dest2] + matrix[dest2][dest3] + matrix[dest3][dest1];
@@ -120,15 +111,23 @@ int Graph::findMinWay(int start, int dest1, int dest2, int dest3) {
 	arr[4] = matrix[start][dest3] + matrix[dest3][dest1] + matrix[dest1][dest2];
 	arr[5] = matrix[start][dest3] + matrix[dest3][dest2] + matrix[dest2][dest1];
 
+	int length = findMin(arr, sizeof(arr) / sizeof(int));
 
-	int index = findMin(arr, sizeof(arr) / sizeof(int));
+	
+	return length;	//최소길이 반환
 
-	printf("최소 거리 : %d \n", arr[index]);
-	return index;
 }
 
-int Graph::findMinWay(int start, int dest1, int dest2, int dest3, int dest4) {
-	int arr[24];
+
+int Graph::findMinWay(Passenger* p1, Passenger* p2, Passenger* p3, Passenger* p4) {
+	int arr[24];	//4x3x2x1 = 24
+
+	int start = convertEdge(p1->getStartAddr());	//시작점 저장
+	int dest1 = convertEdge(p1->getDestAddr());
+	int dest2 = convertEdge(p2->getDestAddr());
+	int dest3 = convertEdge(p3->getDestAddr());
+	int dest4 = convertEdge(p4->getDestAddr());
+
 	arr[0] = matrix[start][dest1] + matrix[dest1][dest2] + matrix[dest2][dest3] + matrix[dest3][dest4];//1234
 	arr[1] = matrix[start][dest1] + matrix[dest1][dest2] + matrix[dest2][dest4] + matrix[dest4][dest3];//1243
 	arr[2] = matrix[start][dest1] + matrix[dest1][dest3] + matrix[dest3][dest2] + matrix[dest2][dest4];//1324
@@ -157,11 +156,39 @@ int Graph::findMinWay(int start, int dest1, int dest2, int dest3, int dest4) {
 	arr[22] = matrix[start][dest4] + matrix[dest4][dest3] + matrix[dest3][dest1] + matrix[dest1][dest2];	//4312
 	arr[23] = matrix[start][dest4] + matrix[dest4][dest3] + matrix[dest3][dest2] + matrix[dest2][dest1];	//4321
 																											//---여기까지 4 먼저
-	int index = findMin(arr, sizeof(arr) / sizeof(int));
+	int length = findMin(arr, sizeof(arr) / sizeof(int));
 
-	printf("최소 거리 : %d \n", arr[index]);
+	
 
-	return index;
+	return length;
+}
+
+
+int Graph::findMin(int arr[], int size) {
+	int min = arr[0];
+	for (int i = 0; i < size; i++) {
+		if (min > arr[i]) min = arr[i];
+	}	//최소거리 찾고
+
+	for (int i = 0; i < size; i++) {
+		if (arr[i] == min) return i;	//그 인덱스 반환
+	}
+	return 0;
+}
+
+
+int Graph::convertEdge(string loc) {
+
+	if (loc == "기숙사") return 0;
+	else if (loc == "월평역") return 1;
+	else if (loc == "유성온천역") return 2;
+	else if (loc == "카이스트") return 3;
+	else if (loc == "봉명동") return 4;
+	else if (loc == "월드컵경기장") return 5;
+	else if (loc == "복합터미널") return 6;
+	else if (loc == "은행동") return 7;
+	else if (loc == "둔산동") return 8;
+	else if (loc == "대전역") return 9;
 }
 
 
@@ -176,59 +203,11 @@ void Graph::AddEdge(string start, string goal, int dist)//간선 추가
 
 }
 
-void Graph::ViewNeighbors()const
 
-{
-
-	cout << "=== 이웃 정점 ===" << endl;
-
-	for (int i = 0; i < vn; i++)
-
-	{
-
-		cout << i << "의 이웃: ";
-
-		ViewNeighbor(i);//i정점의 이웃 보여주기
-
-	}
-
-	cout << endl;
-
+int Graph::matrixValue(int i, int j) {
+	return matrix[i][j];
 }
 
-void Graph::ViewNeighbor(int vt)const
-
-{
-
-	for (int i = 0; i < vn; i++)
-
-	{
-		cout << matrix[vt][i] << " ";
-	}
-
-	cout << endl;
-
-}
-
-Neighbors Graph::FindNeighbors(int vt)
-
-{
-
-	Neighbors neighbors;
-
-	for (int i = 0; i < vn; i++)
-
-	{
-
-		if (matrix[vt][i])
-
-		{
-			neighbors.push_back(i);
-
-		}
-
-	}
-
-	return neighbors;
-
+int Graph::originalLength(Passenger* ps) {
+	return matrix[convertEdge(ps->getStartAddr())]  [convertEdge(ps->getDestAddr())];
 }

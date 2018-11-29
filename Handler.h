@@ -3,22 +3,30 @@
 
 #include "Graph.h"
 #include "Calculation.h"
-
+#include "Event.h"
 
 class Handler {
 
-
+	Calculation* _calculation;
+	Graph * _graph;
 
 
 public:
 
-	void allocCost(Passenger* p1, Passenger* p2) {
 
-	}
+	Handler(Event* _event, string graphAddr); //持失切
+
+	~Handler(void);			//社瑚切
+
+	void allocCost(Event* _event);
 
 };
 
 #endif
+
+
+
+
 
 
 

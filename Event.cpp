@@ -28,7 +28,7 @@ void Event::eventOn(Spot* spot)
 void Event::eventPrint()
 {
 	cout << "목적지에 도착했습니다." << endl;
-	for (int i = 0; i < size; i++) {		
+	for (int i = 0; i < size; i++) {
 		cout << passengerOnTaxi[i].getName() << "님, 지불하실 금액은" << passengerOnTaxi[i].getToPay() << "입니다." << endl;
 	}
 }
@@ -38,4 +38,17 @@ void Event::eventEnd()
 	for (int i = 0; i < size; i++) {
 		delete &passengerOnTaxi[i];
 	}
+}
+
+void Event::eventSetToPay(int n, int gold)
+{
+	passengerOnTaxi[n].setToPay(gold);
+}
+
+int Event::getSize() {
+	return size;
+}
+
+Passenger* Event::getPassenger(int i) {
+	return &passengerOnTaxi[i];
 }
