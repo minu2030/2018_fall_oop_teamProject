@@ -56,6 +56,21 @@ Passenger* Spot::getPassengers(int i)
 	return &passengers.at(i);
 }
 
+Passenger * Spot::getPassengersByNum(int userNum)
+{	
+	int check = 0;
+	for (int i = 0; i < passengers.size(); i++) {
+		if (userNum == passengers.at(i).getusernumber()) {
+			check = 1;
+			return &passengers.at(i);
+		}
+	}
+	if (check == 0) {
+		throw "error";
+	}
+}
+
+
 
 void Spot::setStartSpot(string _startSpot) {
 	startSpot = _startSpot;
