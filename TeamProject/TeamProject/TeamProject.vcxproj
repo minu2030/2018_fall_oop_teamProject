@@ -49,6 +49,10 @@
     <ClInclude Include="UserController.h" />
     <ClInclude Include="UserView.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="passenger.txt" />
+    <Text Include="userInfo.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{ECA86518-BE2C-4670-9D0D-58D9EC0FE834}</ProjectGuid>
     <RootNamespace>TeamProject</RootNamespace>

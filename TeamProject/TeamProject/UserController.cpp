@@ -5,7 +5,7 @@ using namespace std;
 
 UserController::UserController()
 {
-
+	ControllerUserInfo();
 }
 
 void UserController::ControllerUserInfo()
@@ -15,26 +15,26 @@ void UserController::ControllerUserInfo()
 	string _name;
 	string _number;
 	int _cash;
-	infile.open("C:/Users/rlajd/Desktop/userInfo.txt");
+	infile.open("userInfo.txt");
 	while (!infile.eof())
 	{
-		User user;
+		User* user = new User();
 		getline(infile, _name, '\n');
-		user.setName(_name);
+		user->setName(_name);
 		getline(infile, _number, '\n');
-		user.setPhoneNumber(_number);
+		user->setPhoneNumber(_number);
 		getline(infile, _number, '\n');
 		_cash = atoi(_number.c_str());
-		user.setCash(_cash);
-		user.setusernumber(i);
-		list.insert(list.begin() + i,user);
+		user->setCash(_cash);
+		user->setusernumber(i);
+		list.insert(list.begin() + i,*user);
 		i++;
 		_size++;
 	}
 
 }
 
-User UserController::getList(int i)
+User* UserController::getList(int i)
 {
-	return list.at(i);
+	return &list.at(i);
 }

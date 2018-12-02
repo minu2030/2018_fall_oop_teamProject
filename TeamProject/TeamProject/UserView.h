@@ -7,6 +7,6 @@ class UserView
 {
 public:
 	UserView();
-	void printUser(UserController u,int i);
+	void printUser(UserController* u,int i);
 };
 

@@ -14,6 +14,6 @@ public:
 	UserController();
 	int size(){ return _size; }
 	void ControllerUserInfo();
-	User getList(int i);
+	User* getList(int i);
 };
 

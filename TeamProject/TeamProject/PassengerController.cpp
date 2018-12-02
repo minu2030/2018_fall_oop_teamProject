@@ -13,7 +13,7 @@ PassengerController::PassengerController(int size)
 	string name;
 	_size = 0;
 	int i = 0;
-	infile.open("C:/Users/rlajd/Desktop/passenger.txt");
+	infile.open("passenger.txt");
 	while (!infile.eof())
 	{
 		Passenger passenger;
@@ -34,9 +34,9 @@ PassengerController::PassengerController(int size)
 
 	passengerData.reserve(size);
 }
-bool PassengerController::passengerControllerUserInfo(User user,int i,int v)
+bool PassengerController::passengerControllerUserInfo(User* user,int i,int v)
 {
-		Passenger passenger(user);
+		Passenger passenger(*user);
 		
 		if (passengerData.at(i).getStartAddr() == "")
 		{
@@ -57,17 +57,17 @@ Passenger* PassengerController::getPassengerList(int i)
 	return &passengerList.at(i);
 }
 
-void PassengerController::InputPassenger(User user, string start, string dest)
+void PassengerController::InputPassenger(User* user, string start, string dest)
 {
-	Passenger passenger(user);
+	Passenger passenger(*user);
 	int boolean = 0;
 	passenger.setStartAddr(start);
 	passenger.setDestAddr(dest);
 	//유저번호에 맞게 입력된 정보를 저장한다.
-	passengerData.insert(passengerData.begin() + user.getusernumber(), passenger);
+	passengerData.insert(passengerData.begin() + user->getusernumber(), passenger);
 		for (int i = 0; i < passengerList.size();i++)
 		{
-			if (passengerList.at(i).getusernumber() == user.getusernumber())
+			if (passengerList.at(i).getusernumber() == user->getusernumber())
 			{
 				passengerList.erase(passengerList.begin() + i);
 				passengerList.insert(passengerList.begin() + i, passenger);

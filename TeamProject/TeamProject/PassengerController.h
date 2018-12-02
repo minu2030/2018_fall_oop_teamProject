@@ -15,9 +15,9 @@ private:
 public:
 	PassengerController(int size);
 	int size(){ return _size; }
-	bool passengerControllerUserInfo(User user,int i,int v);
+	bool passengerControllerUserInfo(User* user,int i,int v);
 	Passenger* getPassengerList(int i);
-	void InputPassenger(User user,string start,string dest);
+	void InputPassenger(User* user,string start,string dest);
 
 };
 
