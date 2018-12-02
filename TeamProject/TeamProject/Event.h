@@ -8,8 +8,9 @@ class Event {
 public:
 	Event();
 	void eventAddPassenger(Passenger* pass);
+	bool eventDeletePassenger(Passenger* pass);
 	void eventOn(Spot* spot);
-	void eventPrint();
+	string eventPrint(int i);
 	void eventEnd();
 	void eventSetToPay(int n, int gold);
 	int getSize();

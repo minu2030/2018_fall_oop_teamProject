@@ -17,6 +17,21 @@ void Event::eventAddPassenger(Passenger* pass)
 	size++;
 }
 
+bool Event::eventDeletePassenger(Passenger * pass)
+{
+	try {
+		for (int i = 0; i < 4; i++) {
+			if (pass->getusernumber() == passengerOnTaxi[i].getusernumber()) {
+				delete &passengerOnTaxi[i];
+				return true;
+			}
+		}
+	}
+	catch (int excep) {
+		throw -1;
+	}
+}
+
 void Event::eventOn(Spot* spot)
 {
 	for (int i = 0; i < size; i++) {
@@ -25,12 +40,9 @@ void Event::eventOn(Spot* spot)
 	}
 }
 
-void Event::eventPrint()
+string Event::eventPrint(int i)
 {
-	cout << "목적지에 도착했습니다." << endl;
-	for (int i = 0; i < size; i++) {
-		cout << passengerOnTaxi[i].getName() << "님, 지불하실 금액은" << passengerOnTaxi[i].getToPay() << "입니다." << endl;
-	}
+	return (passengerOnTaxi[i].getName() + "님, 지불하실 금액은" + to_string(passengerOnTaxi[i].getToPay()) + " 원입니다.");
 }
 
 void Event::eventEnd()
