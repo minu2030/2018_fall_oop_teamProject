@@ -5,7 +5,6 @@
 
 using namespace std;
 Spot::Spot(string startSpot) {
-	passengers.reserve(10);
 	setStartSpot(startSpot);
 }
 

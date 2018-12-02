@@ -30,7 +30,7 @@ void UserController::ControllerUserInfo()
 		list.insert(list.begin() + i,*user);
 		i++;
 		_size++;
-	}
+	}	
 
 }
 

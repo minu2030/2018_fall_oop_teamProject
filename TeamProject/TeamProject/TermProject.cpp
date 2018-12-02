@@ -4,7 +4,7 @@
 #include "PassengerView.h"
 #include "SpotController.h"
 #include "SpotView.h"
-
+#include "Handler.h"
 #include <iostream>
 
 int main()
@@ -15,12 +15,21 @@ int main()
 	UserView* UV = new UserView();
 	PassengerController* PC = new PassengerController(UC->size());
 	PassengerView* PV = new PassengerView();
+	SpotController* SC = new SpotController();
+	SpotView* SV = new SpotView();
+
 
 	for (int i = 0, j = 0; i < UC->size(); i++) {
 		if (PC->passengerControllerUserInfo(UC->getList(i), i, j))
 			j++;
 	}
+
+	for (int i = 0; i < PC->size(); i++) {
+		SC->addPassenger(PC->getPassengerList(i));
+	}
+	SC->printAllSpot();
 	//다른 승객들의 정보를 데이터베이스에 넣는 과정
+
 	while (true)
 	{
 		//안녕하세요. " "님?
@@ -35,14 +44,35 @@ int main()
 		cin >> de;
 
 		PC->InputPassenger(UC->getList(use), st, de);
-		puts("AA");
+		//출발지 도착지 입력받고,
+		/*
 		int pa = 0;
 		while (pa < PC->size())
 		{
 			PV->printPassenger(PC, pa);
 			pa++;
 		}
+		*/
+
+		//puts("현재 같은 출발지에 있는 사람을 모두 출력합니다.");
+		Event* eve = new Event();
+		string passengerSpot = "기숙사";
+		eve->eventAddPassenger(SC->getSpot(passengerSpot)->getPassengers(0));
+		eve->eventAddPassenger(SC->getSpot(passengerSpot)->getPassengers(1));
+		eve->eventAddPassenger(SC->getSpot(passengerSpot)->getPassengers(2));
+		eve->eventAddPassenger(SC->getSpot(passengerSpot)->getPassengers(3));
+		//입력한 출발지와 같은 출발지의 승객들을 event에 4명까지 추가함
+		
+		Handler* HD = new Handler(eve, "Graph.txt");
+		
+		puts("동승자 리스트 입니다. 탑승하시겠습니까?");
+		if (true) {
+
+		}
 	}
 	
+
+
+
 	return 0;
 }

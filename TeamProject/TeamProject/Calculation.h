@@ -10,7 +10,6 @@ using namespace std;
 class Calculation {
 
 	public:
-
 		int calculate_Cost(int length);	//총 비용 계산 함수
 		int calculate_Personal_Cost(int total, double percent);	// 개인별 내야할 돈을 계산해준다.
 		double calculate_percent(int total, int mine);	//내야할 돈의 비율계산

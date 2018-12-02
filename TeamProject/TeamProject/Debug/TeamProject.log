@@ -1,4 +1,3 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (TermProject.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  UserController.cpp
   TeamProject.vcxproj -> C:\Users\태 완\Desktop\2018_fall_oop_teamProject\TeamProject\Debug\TeamProject.exe
   TeamProject.vcxproj -> C:\Users\태 완\Desktop\2018_fall_oop_teamProject\TeamProject\Debug\TeamProject.pdb (Partial PDB)

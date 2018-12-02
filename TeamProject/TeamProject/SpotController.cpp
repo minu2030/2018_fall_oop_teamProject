@@ -6,49 +6,41 @@ SpotController::SpotController() {
 	passengers.reserve(10);
 }
 
-bool SpotController::addSpot(string startSpot) {
-	try {
-		if (spots.size() != 0) {
-			if (isContain(startSpot)) {
-				Spot *addedSpot = new Spot(startSpot);
-				spots.push_back(*addedSpot);
-				return true;
-			}
-		}
-		else {
-			Spot *addedSpot = new Spot(startSpot);
-			spots.push_back(*addedSpot);
-			return true;
-		}
-	}
-	catch (string errorStr) {
-		cout << errorStr << endl;
-	}
-	return false;
-}
-
-Spot* SpotController::getSpot(string startSpot) {
-	try {
-		for (int i = 0; i < spots.size(); i++) {
-			if (isContain(startSpot)) {
-				return &spots.at(i);
-			}
-		}
-		throw "해당하는 출발지의 Spot이 없습니다.";
-	}
-	catch (char* errorStr) {
-		cout << errorStr << endl;
-	}
-	return NULL;
-}
-
-bool SpotController::isContain(string startSpot)
+Spot* SpotController::getSpot(string startSpot)
 {
 	for (int i = 0; i < spots.size(); i++) {
-		if (strcmp(startSpot.c_str(), spots.at(i).getStartSpot().c_str())) {
-			return false;
+		if (startSpot == spots.at(i).getStartSpot()) {
+			return &spots.at(i);
 		}
 	}
-	return true;
+}
+
+void SpotController::addPassenger(Passenger * pass)
+{
+	for (int i = 0; i < spots.size(); i++) {
+		if (pass->getStartAddr() == spots.at(i).getStartSpot()) {
+			spots.at(i).addPassenger(pass);
+			return;
+		}
+	}
+	Spot* _spot = new Spot(pass->getStartAddr());
+	_spot->addPassenger(pass);
+	spots.push_back(*_spot);
+}
+
+void SpotController::deleteSpot(Spot * _spot)
+{
+	for (int i = 0; i < spots.size(); i++) {
+		if (spots.at(i).getStartSpot() == _spot->getStartSpot()) {
+			spots.erase(spots.begin() + i);
+		}
+	}
+}
+
+void SpotController::printAllSpot()
+{
+	for (int i = 0; i < spots.size(); i++) {
+		cout << spots.at(i).getStartSpot() << endl;
+	}
 }
 

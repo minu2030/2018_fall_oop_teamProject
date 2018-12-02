@@ -8,10 +8,10 @@ using namespace std;
 class SpotController {
 public:
 	SpotController();
-	bool addSpot(string startSpot);
-	Spot* getSpot(string startSpot);
-	bool isContain(string startSpot);
-
+	void getSpot(string startSpot);
+	void addPassenger(Passenger* pass);
+	void deleteSpot(Spot* _spot);
+	void printAllSpot();
 private:
 	vector<Spot> spots;
 	vector<Passenger> passengers;
