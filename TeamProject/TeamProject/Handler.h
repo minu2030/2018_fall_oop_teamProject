@@ -11,7 +11,7 @@ class Handler {
 
 
 public:
-	Calculation* _calculation;
+	Calculation* _calculation = new Calculation();
 	Graph * _graph;
 
 	Handler(Event* _event, string graphAddr); //»ý¼ºÀÚ

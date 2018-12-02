@@ -29,7 +29,7 @@ PassengerController::PassengerController(int size)
 		getline(infile, _destAddr, '\n');
 		passenger.setDestAddr(_destAddr);
 		passengerData.insert(passengerData.begin() + i, passenger);
-		i++;	
+		i++;
 	}
 
 	passengerData.reserve(size);

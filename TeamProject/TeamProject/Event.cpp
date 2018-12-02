@@ -12,7 +12,9 @@ void Event::eventAddPassenger(Passenger* pass)
 	newPass->setPhoneNumber(pass->getPhoneNumber());
 	newPass->setCash(pass->getCash());
 	newPass->setusernumber(pass->getusernumber());
-
+	newPass->setStartAddr(pass->getStartAddr());
+	newPass->setDestAddr(pass->getDestAddr());
+	newPass->setToPay(0);
 	passengerOnTaxi[size] = *newPass;
 	size++;
 }
