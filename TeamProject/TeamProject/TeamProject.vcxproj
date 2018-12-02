@@ -50,6 +50,7 @@
     <ClInclude Include="UserView.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Graph.txt" />
     <Text Include="passenger.txt" />
     <Text Include="userInfo.txt" />
   </ItemGroup>

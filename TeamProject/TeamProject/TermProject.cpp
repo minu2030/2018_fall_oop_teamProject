@@ -40,8 +40,8 @@ int main()
 		string st;
 		string de;
 
-		cin >> st;
-		cin >> de;
+		//cin >> st;
+		//cin >> de;
 
 		PC->InputPassenger(UC->getList(use), st, de);
 		//출발지 도착지 입력받고,
@@ -65,9 +65,14 @@ int main()
 		
 		Handler* HD = new Handler(eve, "Graph.txt");
 		
+		//string s = HD->_calculation->calculate_Compare(HD->_graph->originalLength(eve->getPassenger(3)), 4, eve, HD->_graph);
+		//cout << s << endl;
 		puts("동승자 리스트 입니다. 탑승하시겠습니까?");
 		if (true) {
+			eve->eventOn(SC->getSpot(passengerSpot));
 
+			eve->eventPrint(0);
+			eve->eventEnd();
 		}
 	}
 	

@@ -106,5 +106,8 @@
     <Text Include="userInfo.txt">
       <Filter>소스 파일</Filter>
     </Text>
+    <Text Include="Graph.txt">
+      <Filter>소스 파일</Filter>
+    </Text>
   </ItemGroup>
 </Project>

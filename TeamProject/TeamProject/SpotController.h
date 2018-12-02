@@ -8,7 +8,7 @@ using namespace std;
 class SpotController {
 public:
 	SpotController();
-	void getSpot(string startSpot);
+	Spot* getSpot(string startSpot);
 	void addPassenger(Passenger* pass);
 	void deleteSpot(Spot* _spot);
 	void printAllSpot();

@@ -7,12 +7,12 @@
 
 class Handler {
 
-	Calculation* _calculation;
-	Graph * _graph;
+	
 
 
 public:
-
+	Calculation* _calculation;
+	Graph * _graph;
 
 	Handler(Event* _event, string graphAddr); //»ý¼ºÀÚ
 
