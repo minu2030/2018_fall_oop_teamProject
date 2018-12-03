@@ -32,7 +32,7 @@ Graph::~Graph(void)
 
 Graph* Graph::makeGraph(string addr) {
 
-
+		
 	try {
 		fstream inFile;
 		inFile.open(addr);	//파일 입력
@@ -170,10 +170,13 @@ int Graph::findMin(int arr[], int size) {
 		if (min > arr[i]) min = arr[i];
 	}	//최소거리 찾고
 
+	return min;	//그값 반환
+	/*
 	for (int i = 0; i < size; i++) {
 		if (arr[i] == min) return i;	//그 인덱스 반환
 	}
 	return 0;
+	*/
 }
 
 
