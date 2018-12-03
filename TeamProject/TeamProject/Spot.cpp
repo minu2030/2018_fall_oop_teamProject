@@ -29,7 +29,7 @@ bool Spot::removePassenger(Passenger* removedPassenger)
 		if (passengers.empty()) {
 			throw "현재 Passenger가 없습니다.";
 		}
-		for (int i = 0; i < passengers.size(); i++) {
+		for (unsigned int i = 0; i < passengers.size(); i++) {
 			if (removedPassenger->getusernumber() == passengers.at(i).getusernumber()) {
 				//passengers.erase(removedPassenger);
 			}
@@ -43,7 +43,7 @@ bool Spot::removePassenger(Passenger* removedPassenger)
 
 Passenger* Spot::getPassengers(string passengerName)
 {
-	for (int i = 0; i < passengers.size(); i++) {
+	for (unsigned int i = 0; i < passengers.size(); i++) {
 		if (strcmp (passengers.at(i).getName().c_str(), passengerName.c_str()))
 			return &passengers.at(i);
 	}
@@ -54,22 +54,6 @@ Passenger* Spot::getPassengers(int i)
 {
 	return &passengers.at(i);
 }
-
-Passenger * Spot::getPassengersByNum(int userNum)
-{	
-	int check = 0;
-	for (int i = 0; i < passengers.size(); i++) {
-		if (userNum == passengers.at(i).getusernumber()) {
-			check = 1;
-			return &passengers.at(i);
-		}
-	}
-	if (check == 0) {
-		throw "error";
-	}
-}
-
-
 
 void Spot::setStartSpot(string _startSpot) {
 	startSpot = _startSpot;
@@ -90,4 +74,15 @@ bool Spot::check(Passenger * added)
 	if(!strcmp(added->getStartAddr().c_str(), getStartSpot().c_str()))
 		return false;
 	return true;
+}
+
+void Spot::erasePassengerByNum(int userNum)
+{
+	for (unsigned int i = 0; i < passengers.size(); i++) {
+		if (passengers.at(i).getusernumber() == userNum) {
+			//Passenger* temp = &passengers.at(i);
+			passengers.erase(passengers.begin() + i);
+			//delete temp;
+		}
+	}
 }

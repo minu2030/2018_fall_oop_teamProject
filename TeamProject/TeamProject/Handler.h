@@ -6,13 +6,14 @@
 #include "Event.h"
 
 class Handler {
-
+	
 	
 
 
 public:
-	Calculation* _calculation = new Calculation();
+	Calculation * _calculation;
 	Graph * _graph;
+	Event* _event;
 
 	Handler(Event* _event, string graphAddr); //»ý¼ºÀÚ
 

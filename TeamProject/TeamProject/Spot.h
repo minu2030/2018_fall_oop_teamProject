@@ -12,11 +12,11 @@ public:
 	bool removePassenger(Passenger* removedPassenger);
 	Passenger* getPassengers(string passengerName);
 	Passenger* getPassengers(int i);
-	Passenger* getPassengersByNum(int userNum);
 	void setStartSpot(string name);
 	string getStartSpot();
 	int getNumOfPassengers();
 	bool check(Passenger* added);
+	void erasePassengerByNum(int userNum);
 
 private:
 	string startSpot;

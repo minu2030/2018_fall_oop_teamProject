@@ -7,22 +7,24 @@ int Calculation::calculate_Cost(int length) {	//총 비용 계산 함수( 1km당 900원으
 
 string Calculation::calculate_Compare(int myLength, int howMany, Event* _event, Graph* _graph) {
 	int alone = calculate_Cost(myLength);
-	int with = calculate_Cost(calculate_totalLength(howMany, _event, _graph));
+	int with = calculate_Cost(_graph->findMinWay(_event->getPassenger(0), _event->getPassenger(1),
+		_event->getPassenger(2), _event->getPassenger(3)));
+	with = with / (_event->getSize());
 	
-	string dest1 = NULL;
-	string dest2 = NULL;
-	string dest3 = NULL;
+	string dest1  ;
+	string dest2  ;
+	string dest3 ;
 	
 	switch (howMany) {
 	case 2: dest1 = _event->getPassenger(0)->getDestAddr();
-		return ("함께가는 사람들의 도착지 : " + dest1 + "\n" + "혼자갈때의 요금 : " + to_string(alone) + "\n" + "함께갈때의 요금 : " + to_string(with));
+		return ("함께가는 사람들의 도착지 : " + dest1 + "\n" + "혼자갈때의 예상 요금 : " + to_string(alone) + "\n" + "함께갈때의 예상 요금 : " + to_string(with));
 	case 3: dest1 = _event->getPassenger(0)->getDestAddr();
 		dest2 = _event->getPassenger(1)->getDestAddr();
-		return("함께가는 사람들의 도착지 : " + dest1 + " " + dest2 + "혼자갈때의 요금 : " + to_string(alone) + "\n" + "함께갈때의 요금 : " + to_string(with));
+		return("함께가는 사람들의 도착지 : " + dest1 + " " + dest2 + "혼자갈때의 예상 요금 : " + to_string(alone) + "\n" + "함께갈때의 예상 요금 : " + to_string(with));
 	case 4 : dest1 = _event->getPassenger(0)->getDestAddr();
 		dest2 = _event->getPassenger(1)->getDestAddr();
 		dest3 = _event->getPassenger(2)->getDestAddr();
-		return("함께가는 사람들의 도착지 : " + dest1 + " " + dest2 + " " + dest3 + "혼자갈때의 요금 : " + to_string(alone) + "\n" + "함께갈때의 요금 : " + to_string(with));
+		return("함께가는 사람들의 도착지 : " + dest1 + " " + dest2 + " " + dest3 + "\n" + "혼자갈때의 예상 요금 : " + to_string(alone) + "\n" + "함께갈때의 예상 요금 : " + to_string(with));
 	default:
 		return NULL;
 	}
@@ -36,7 +38,7 @@ int Calculation::calculate_Personal_Cost(int total, double percent) {	//개인별 �
 }
 
 double Calculation::calculate_percent(int total, int mine) {			//돈을 내야할 비율 계산
-	return ((double)total) / mine;
+	return  mine/ ((double)total);
 }
 
 int Calculation::calculate_totalLength(int n, Event* _event, Graph* _graph) {
