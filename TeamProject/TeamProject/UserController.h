@@ -15,5 +15,6 @@ public:
 	int size(){ return _size; }
 	void ControllerUserInfo();
 	User* getList(int i);
+	string printUser(UserController* u, int i);
 };
 

@@ -18,6 +18,6 @@ public:
 	bool passengerControllerUserInfo(User* user,int i,int v);
 	Passenger* getPassengerList(int i);
 	void InputPassenger(User* user,string start,string dest);
-
+	string printPassenger(PassengerController * u, int i);
 };
 

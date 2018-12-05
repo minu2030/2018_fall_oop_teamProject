@@ -8,16 +8,22 @@ SpotController::SpotController() {
 
 Spot* SpotController::getSpot(string startSpot)
 {
-	for (int i = 0; i < spots.size(); i++) {
-		if (startSpot == spots.at(i).getStartSpot()) {
-			return &spots.at(i);
+	try {
+		for (unsigned int i = 0; i < spots.size(); i++) {
+			if (startSpot == spots.at(i).getStartSpot()) {
+				return &spots.at(i);
+			}
 		}
+		throw - 1;
+	}
+	catch (exception exept) {
+		cout << exept.what() << endl;
 	}
 }
 
 void SpotController::addPassenger(Passenger * pass)
 {
-	for (int i = 0; i < spots.size(); i++) {
+	for (unsigned int i = 0; i < spots.size(); i++) {
 		if (pass->getStartAddr() == spots.at(i).getStartSpot()) {
 			spots.at(i).addPassenger(pass);
 			return;
@@ -30,7 +36,7 @@ void SpotController::addPassenger(Passenger * pass)
 
 void SpotController::deleteSpot(Spot * _spot)
 {
-	for (int i = 0; i < spots.size(); i++) {
+	for (unsigned int i = 0; i < spots.size(); i++) {
 		if (spots.at(i).getStartSpot() == _spot->getStartSpot()) {
 			spots.erase(spots.begin() + i);
 		}
@@ -39,7 +45,7 @@ void SpotController::deleteSpot(Spot * _spot)
 
 void SpotController::printAllSpot()
 {
-	for (int i = 0; i < spots.size(); i++) {
+	for (unsigned int i = 0; i < spots.size(); i++) {
 		cout << spots.at(i).getStartSpot() << endl;
 	}
 }

@@ -84,3 +84,15 @@ void PassengerController::InputPassenger(User* user, string start, string dest)
 			passengerList.push_back(passenger);
 		}
 }
+
+string PassengerController::printPassenger(PassengerController* u, int i)
+{
+	string result = "";
+	result += u->getPassengerList(i)->getName() + ",";
+	result += u->getPassengerList(i)->getPhoneNumber() + ",";
+	result += u->getPassengerList(i)->getCash() + ",";
+	result += u->getPassengerList(i)->getStartAddr() + ",";
+	result += u->getPassengerList(i)->getDestAddr();
+
+	return result;
+}
