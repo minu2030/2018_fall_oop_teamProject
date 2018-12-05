@@ -38,13 +38,13 @@ void Event::eventOn(Spot* spot)
 {
 	for (int i = 0; i < size; i++) {
 		int userNum = passengerOnTaxi->getusernumber();
-		delete spot->getPassengersByNum(userNum);
+		spot->erasePassengerByNum(userNum);
 	}
 }
 
-string Event::eventPrint(int i)
+string Event::eventPrint(int i) // "승객이름,toPay"
 {
-	return (passengerOnTaxi[i].getName() + "님, 지불하실 금액은" + to_string(passengerOnTaxi[i].getToPay()) + " 원입니다.");
+	return (passengerOnTaxi[i].getName() + "," + to_string(passengerOnTaxi[i].getToPay()));
 }
 
 void Event::eventEnd()
