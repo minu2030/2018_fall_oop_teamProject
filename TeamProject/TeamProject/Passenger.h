@@ -12,7 +12,7 @@ private:
 	bool isHost;
 
 public:
-	Passenger(User user);
+	Passenger(User* user);
 	Passenger();
 
 	string getStartAddr(){ return startAddr;}

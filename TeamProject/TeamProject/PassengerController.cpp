@@ -39,7 +39,7 @@ PassengerController::PassengerController(int size)
 //user의 정보를 받아 승객을 생성하는 과정
 bool PassengerController::passengerControllerUserInfo(User* user,int i,int v)
 {
-		Passenger passenger(*user);
+		Passenger passenger(user);
 		
 		if (passengerData.at(i).getStartAddr() == "")
 		{
@@ -64,7 +64,7 @@ Passenger* PassengerController::getPassengerList(int i)
 //UI에서 승객의 정보를 입력받기 위한 함수
 void PassengerController::InputPassenger(User* user, string start, string dest)
 {
-	Passenger passenger(*user);
+	Passenger passenger(user);
 	int boolean = 0;
 	passenger.setStartAddr(start);
 	passenger.setDestAddr(dest);

@@ -32,6 +32,9 @@ bool Server::getData(string start, string end)
 	
 	PC->InputPassenger(UC->getList(userNum), start, end);
 	//출발지 도착지 입력받고,
+	
+	Passenger *passenger = new Passenger(UC->getList(userNum));
+
 
 	string passengerSpot = start;
 

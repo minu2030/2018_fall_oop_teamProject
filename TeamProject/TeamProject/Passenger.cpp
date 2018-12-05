@@ -5,10 +5,10 @@ Passenger::Passenger()
 {
 
 }
-Passenger::Passenger(User user)
+Passenger::Passenger(User* user)
 {
-	setName(user.getName());
-	setCash(user.getCash());
-	setPhoneNumber(user.getPhoneNumber());
-	setusernumber(user.getusernumber());
+	setName(user->getName());
+	setCash(user->getCash());
+	setPhoneNumber(user->getPhoneNumber());
+	setusernumber(user->getusernumber());
 }
