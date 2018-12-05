@@ -8,13 +8,15 @@ UserView::UserView()
 {
 
 }
-void UserView::printUser(UserController* u, int i)
+string UserView::printUser(UserController* u, int i)
 {
-	//유저의 정보를 출력한다.
-	cout << " 사용자 이름 : " << u->getList(i)->getName() << endl;
-	cout << " 사용자 전화번호 : " << u->getList(i)->getPhoneNumber() << endl;
-	cout << " Cash : " << u->getList(i)->getCash() << endl;
-	cout << " UserNumber : " << u->getList(i)->getusernumber() << endl;
+	string result = "";
+	result += u->getList(i)->getName() + ",";
+	result += u->getList(i)->getPhoneNumber() + ",";
+	result += u->getList(i)->getCash() + ",";
+	result += u->getList(i)->getusernumber();
+
+	return result;
 }
 
 

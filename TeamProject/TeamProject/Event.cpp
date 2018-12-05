@@ -29,7 +29,7 @@ bool Event::eventDeletePassenger(Passenger * pass)
 			}
 		}
 	}
-	catch (int excep) {
+	catch (int exception) {
 		throw -1;
 	}
 }
@@ -38,7 +38,7 @@ void Event::eventOn(Spot* spot)
 {
 	for (int i = 0; i < size; i++) {
 		int userNum = passengerOnTaxi->getusernumber();
-		delete spot->getPassengersByNum(userNum);
+		spot->erasePassengerByNum(userNum);
 	}
 }
 

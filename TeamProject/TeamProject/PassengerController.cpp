@@ -5,6 +5,7 @@
 
 using namespace std;
 
+//기존 승객정보 업로드
 PassengerController::PassengerController(int size)
 {
 	fstream infile;
@@ -34,6 +35,8 @@ PassengerController::PassengerController(int size)
 
 	passengerData.reserve(size);
 }
+
+//user의 정보를 받아 승객을 생성하는 과정
 bool PassengerController::passengerControllerUserInfo(User* user,int i,int v)
 {
 		Passenger passenger(*user);
@@ -52,11 +55,13 @@ bool PassengerController::passengerControllerUserInfo(User* user,int i,int v)
 		return true;
 }
 
+//승객리스트를 다른 클래스로 전달하기 위한 함수
 Passenger* PassengerController::getPassengerList(int i)
 {
 	return &passengerList.at(i);
 }
 
+//UI에서 승객의 정보를 입력받기 위한 함수
 void PassengerController::InputPassenger(User* user, string start, string dest)
 {
 	Passenger passenger(*user);

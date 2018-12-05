@@ -6,6 +6,6 @@ class PassengerView
 {
 public:
 	PassengerView();
-	void printPassenger(PassengerController* u, int i);
+	string printPassenger(PassengerController* u, int i);
 };
 
