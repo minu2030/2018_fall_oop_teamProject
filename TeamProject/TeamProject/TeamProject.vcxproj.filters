@@ -33,9 +33,6 @@
     <ClCompile Include="PassengerController.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="PassengerView.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Spot.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>

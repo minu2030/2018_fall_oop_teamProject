@@ -25,7 +25,6 @@
     <ClCompile Include="Handler.cpp" />
     <ClCompile Include="Passenger.cpp" />
     <ClCompile Include="PassengerController.cpp" />
-    <ClCompile Include="PassengerView.cpp" />
     <ClCompile Include="Server.cpp" />
     <ClCompile Include="Spot.cpp" />
     <ClCompile Include="SpotController.cpp" />
