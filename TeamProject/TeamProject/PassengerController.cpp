@@ -54,7 +54,6 @@ bool PassengerController::passengerControllerUserInfo(User* user,int i,int v)
 		_size++;
 		return true;
 }
-
 //승객리스트를 다른 클래스로 전달하기 위한 함수
 Passenger* PassengerController::getPassengerList(int i)
 {

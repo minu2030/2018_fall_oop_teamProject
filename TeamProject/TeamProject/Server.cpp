@@ -35,10 +35,25 @@ bool Server::getData(string start, string end)
 	
 	Passenger *passenger = new Passenger(UC->getList(userNum));
 
+	SC->addPassenger(passenger);
 
 	string passengerSpot = start;
 
 	return true;
+}
+
+string Server::proceedEvent()
+{
+	addPassengerToEvent(SC->getSpot(passengerSpot)->getPassengersByUserNum(userNum));
+	int temp = 0;
+	for (unsigned int i = 0; i < eve.size(); i++)
+	{
+		if (eve.at(i).getPassengerByUserNum(userNum)->getusernumber() == userNum) {
+			temp = i;
+		}
+	}
+	eventOn(&eve.at(temp), passengerSpot);
+	return eventEnd(&eve.at(temp));
 }
 
 void Server::addPassengerToEvent(Passenger *pass)
@@ -64,7 +79,6 @@ void Server::addPassengerToEvent(Passenger *pass)
 	_eve.eventAddPassenger(pass);
 	eve.push_back(_eve);
 }
-
 void Server::eventOn(Event* eve, string passengerSpot)
 {
 	eve->eventOn(SC->getSpot(passengerSpot));
@@ -77,6 +91,12 @@ string Server::eventEnd(Event* eve)
 	return temp;
 }
 
+string Server::proceedBeforeEvent1()
+{
+	string result = sendStartSpotList(SC->getSpot(passengerSpot));
+	return result;
+}
+
 string Server::sendStartSpotList(Spot *spot) //"Ãâ¹ßÁö:½Â°´A,µµÂøÁö:½Â°´B,µµÂøÁö,"
 {
 	string result = spot->getStartSpot() + ":";
@@ -84,6 +104,19 @@ string Server::sendStartSpotList(Spot *spot) //"Ãâ¹ßÁö:½Â°´A,µµÂøÁö:½Â°´B,µµÂøÁö
 		result += spot->getPassengers(i)->getName() + ",";
 		result += spot->getPassengers(i)->getDestAddr() + ",";
 	}
+	return result;
+}
+
+string Server::proceedBeforeEvent2()
+{
+	int temp = 0;
+	for (unsigned int i = 0; i<eve.size(); i++)
+	{
+		if (eve.at(i).getPassengerByUserNum(userNum)->getusernumber() == userNum) {
+			temp = i;
+		}
+	}
+	string result = taxiListOfCost(&eve.at(temp));
 	return result;
 }
 
