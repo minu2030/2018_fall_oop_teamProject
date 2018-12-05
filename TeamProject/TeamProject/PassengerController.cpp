@@ -70,7 +70,7 @@ void PassengerController::InputPassenger(User* user, string start, string dest)
 	passenger.setDestAddr(dest);
 	//유저번호에 맞게 입력된 정보를 저장한다.
 	passengerData.insert(passengerData.begin() + user->getusernumber(), passenger);
-		for (int i = 0; i < passengerList.size();i++)
+		for (unsigned int i = 0; i < passengerList.size();i++)
 		{
 			if (passengerList.at(i).getusernumber() == user->getusernumber())
 			{

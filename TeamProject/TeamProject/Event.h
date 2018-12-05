@@ -15,7 +15,7 @@ public:
 	void eventSetToPay(int n, int gold);
 	int getSize();
 	Passenger* getPassenger(int i);
-
+	Passenger* getPassengerByUserNum(int userNumber);
 
 private:
 	Passenger passengerOnTaxi[4];

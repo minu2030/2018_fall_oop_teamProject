@@ -29,10 +29,8 @@
     <ClCompile Include="Spot.cpp" />
     <ClCompile Include="SpotController.cpp" />
     <ClCompile Include="SpotView.cpp" />
-    <ClCompile Include="TermProject.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UserController.cpp" />
-    <ClCompile Include="UserView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calculation.h" />

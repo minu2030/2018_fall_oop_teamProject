@@ -30,7 +30,7 @@ bool Event::eventDeletePassenger(Passenger * pass)
 		}
 	}
 	catch (int exception) {
-		throw -1;
+		throw - 1;
 	}
 }
 
@@ -42,9 +42,11 @@ void Event::eventOn(Spot* spot)
 	}
 }
 
-string Event::eventPrint(int i) // "½Â°´ÀÌ¸§,toPay"
+string Event::eventPrint(int userN) // "½Â°´ÀÌ¸§,toPay"
 {
-	return (passengerOnTaxi[i].getName() + "," + to_string(passengerOnTaxi[i].getToPay()));
+	string result = getPassengerByUserNum(userN)->getName();
+	result += "," + getPassengerByUserNum(userN)->getToPay();
+	return result;
 }
 
 void Event::eventEnd()
@@ -65,4 +67,19 @@ int Event::getSize() {
 
 Passenger* Event::getPassenger(int i) {
 	return &passengerOnTaxi[i];
+}
+
+Passenger * Event::getPassengerByUserNum(int userNumber)
+{
+	try {
+		for (int i = 0; i < size; i++) {
+			if (userNumber == passengerOnTaxi[i].getusernumber()) {
+				return &passengerOnTaxi[i];
+			}
+		}
+	throw -1;
+	}
+	catch(exception e) {
+		e.what();
+	}
 }

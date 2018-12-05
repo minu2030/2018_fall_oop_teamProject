@@ -1,60 +1,24 @@
 #include "Server.h"
 #include <iostream>
-
 using namespace std;
-
-int main()
-{
-	while (true)
-	{
-		int pa = 0;
-		while (pa < PC->size())
-		{
-			PV->printPassenger(PC, pa);
-			pa++;
-		}
-		//puts("현재 같은 출발지에 있는 사람을 모두 출력합니다.");
-		Event* eve = new Event();
-
-		string passengerSpot = "기숙사";
-		eve->eventAddPassenger(SC->getSpot(passengerSpot)->getPassengers(0));
-		eve->eventAddPassenger(SC->getSpot(passengerSpot)->getPassengers(1));
-		eve->eventAddPassenger(SC->getSpot(passengerSpot)->getPassengers(2));
-		eve->eventAddPassenger(SC->getSpot(passengerSpot)->getPassengers(3));
-		//입력한 출발지와 같은 출발지의 승객들을 event에 4명까지 추가함
-		
-		Handler* HD = new Handler(eve, "Graph.txt");
-
-		//사용자에게 보여주는 
-		string s = HD->_calculation->calculate_Compare(HD->_graph->originalLength(eve->getPassenger(3)), 4, eve, HD->_graph);
-		cout << s << endl;
-		puts("동승자 리스트 입니다. 탑승하시겠습니까?");
-		if (true) {
-			eve->eventOn(SC->getSpot(passengerSpot));
-			eve->eventPrint(0);
-			eve->eventEnd();
-		}
-	}
-	return 0;
-}
+int userNum = 4;
 
 Server::Server()
 {
 	UserController* UC = new UserController();
-	UserView* UV = new UserView();
 	PassengerController* PC = new PassengerController(UC->size());
-	PassengerView* PV = new PassengerView();
 	SpotController* SC = new SpotController();
 	SpotView* SV = new SpotView();
+	eve.reserve(0);
 }
 
 void Server::init()
 {
 	for (int i = 0, j = 0; i < UC->size(); i++) {
 		if (PC->passengerControllerUserInfo(UC->getList(i), i, j))
+			//입력되는 승객의 수
 			j++;
 	}
-
 	for (int i = 0; i < PC->size(); i++) {
 		SC->addPassenger(PC->getPassengerList(i));
 	}
@@ -65,21 +29,64 @@ bool Server::getData(string start, string end)
 {
 	//안녕하세요. " "님?
 	//출발지와 도착지를 입력해주세요.
-	int use = 4;
-
-	PC->InputPassenger(UC->getList(use), start, end);
 	
+	PC->InputPassenger(UC->getList(userNum), start, end);
 	//출발지 도착지 입력받고,
+
+	string passengerSpot = start;
+
 	return true;
 }
 
-void Server::eventOn(Event* eve,string passengerSpot)
+void Server::addPassengerToEvent(Passenger *pass)
+{
+	for (unsigned int i=0;i<eve.size();i++)
+	{	
+		//빈 이벤트이면 승객을 삽입
+		if (eve.at(i).getSize() == 0)
+		{
+			eve.at(i).eventAddPassenger(SC->getSpot(passengerSpot)->getPassengers(0));
+			return;
+		}
+		else //승객의 출발지를 확인하여 같으면 삽입
+		{
+			if ((eve.at(i).getPassenger(0)->getStartAddr() == pass->getStartAddr()) && eve.at(i).getSize() != 4 )
+			{
+				eve.at(i).eventAddPassenger(pass);
+				return;
+			}			
+		}
+	}
+	Event _eve;
+	_eve.eventAddPassenger(pass);
+	eve.push_back(_eve);
+}
+
+void Server::eventOn(Event* eve, string passengerSpot)
 {
 	eve->eventOn(SC->getSpot(passengerSpot));
 }
 
 string Server::eventEnd(Event* eve)
 {
-	eve->eventPrint(0);
+	string temp = eve->eventPrint(userNum);
 	eve->eventEnd();
+	return temp;
+}
+
+string Server::sendStartSpotList(Spot *spot) //"출발지:승객A,도착지:승객B,도착지,"
+{
+	string result = spot->getStartSpot() + ":";
+	for (unsigned int i = 0; i < spot->getNumberOfPassenger(); i++) {
+		result += spot->getPassengers(i)->getName() + ",";
+		result += spot->getPassengers(i)->getDestAddr() + ",";
+	}
+	return result;
+}
+
+string Server::taxiListOfCost(Event* eve)
+{
+	Handler HD(eve, "Graph.txt");
+	string s = HD._calculation->calculate_Compare(HD._graph->originalLength(eve->getPassengerByUserNum(userNum)), eve->getSize() , eve, HD._graph);
+	return s;
 }

@@ -64,11 +64,6 @@ string Spot::getStartSpot()
 	return startSpot;
 }
 
-int Spot::getNumOfPassengers()
-{
-	return passengers.size();
-}
-
 bool Spot::check(Passenger * added)
 {
 	if(!strcmp(added->getStartAddr().c_str(), getStartSpot().c_str()))
@@ -84,5 +79,25 @@ void Spot::erasePassengerByNum(int userNum)
 			passengers.erase(passengers.begin() + i);
 			//delete temp;
 		}
+	}
+}
+
+unsigned int Spot::getNumberOfPassenger()
+{
+	return passengers.size();
+}
+
+Passenger * Spot::getPassengersByUserNum(int i) //try_catch로 잡아야함
+{
+	try {
+	for (int i = 0; i < passengers.size(); i++) {
+		if (passengers.at(i).getusernumber() == i) {
+			return &passengers.at(i);
+		}
+	}
+	throw - 1;
+	}
+	catch (exception e){
+		e.what();
 	}
 }

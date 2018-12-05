@@ -14,9 +14,10 @@ public:
 	Passenger* getPassengers(int i);
 	void setStartSpot(string name);
 	string getStartSpot();
-	int getNumOfPassengers();
 	bool check(Passenger* added);
 	void erasePassengerByNum(int userNum);
+	unsigned int getNumberOfPassenger();
+	Passenger* getPassengersByUserNum(int i);
 
 private:
 	string startSpot;

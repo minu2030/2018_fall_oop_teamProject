@@ -42,16 +42,10 @@
     <ClCompile Include="SpotView.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="TermProject.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="User.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="UserController.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="UserView.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Server.cpp">
