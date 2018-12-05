@@ -5,10 +5,9 @@ int userNum = 4;
 
 Server::Server()
 {
-	UserController* UC = new UserController();
-	PassengerController* PC = new PassengerController(UC->size());
-	SpotController* SC = new SpotController();
-	SpotView* SV = new SpotView();
+	UC = new UserController();
+	PC = new PassengerController(UC->size());
+	SC = new SpotController();
 	eve.reserve(0);
 }
 
@@ -29,22 +28,32 @@ bool Server::getData(string start, string end)
 {
 	//¾È³çÇÏ¼¼¿ä. " "´Ô?
 	//Ãâ¹ßÁö¿Í µµÂøÁö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.
-	
+	cout << userNum;
 	PC->InputPassenger(UC->getList(userNum), start, end);
 	//Ãâ¹ßÁö µµÂøÁö ÀÔ·Â¹Ş°í,
 	
 	Passenger *passenger = new Passenger(UC->getList(userNum));
 
-	SC->addPassenger(passenger);
+	passenger->setStartAddr(start);
+	passenger->setDestAddr(end);
 
-	string passengerSpot = start;
+	SC->addPassenger(passenger);
+	
+	passengerSpot = start;
 
 	return true;
 }
 
 string Server::proceedEvent()
 {
-	addPassengerToEvent(SC->getSpot(passengerSpot)->getPassengersByUserNum(userNum));
+	Spot* tempSpot = SC->getSpot(passengerSpot);
+	//addPassengerToEvent(SC->getSpot(passengerSpot)->getPassengersByUserNum(userNum));
+	for (unsigned int i = 0; i < tempSpot->getNumberOfPassenger() && i < 4; i++) {
+		if (tempSpot->getPassengers(i)->getusernumber() != userNum)
+			addPassengerToEvent(tempSpot->getPassengers(i));
+		else //º»ÀÎ
+			i--;
+	}
 	int temp = 0;
 	for (unsigned int i = 0; i < eve.size(); i++)
 	{
@@ -93,16 +102,18 @@ string Server::eventEnd(Event* eve)
 
 string Server::proceedBeforeEvent1()
 {
+	cout << passengerSpot;
 	string result = sendStartSpotList(SC->getSpot(passengerSpot));
 	return result;
 }
 
 string Server::sendStartSpotList(Spot *spot) //"Ãâ¹ßÁö:½Â°´A,µµÂøÁö:½Â°´B,µµÂøÁö,"
 {
-	string result = spot->getStartSpot() + ":";
+	string result = "";
 	for (unsigned int i = 0; i < spot->getNumberOfPassenger(); i++) {
 		result += spot->getPassengers(i)->getName() + ",";
-		result += spot->getPassengers(i)->getDestAddr() + ",";
+		result += spot->getStartSpot() + ",";
+		result += spot->getPassengers(i)->getDestAddr() + ":";
 	}
 	return result;
 }
@@ -122,7 +133,18 @@ string Server::proceedBeforeEvent2()
 
 string Server::taxiListOfCost(Event* eve)
 {
-	Handler HD(eve, "Graph.txt");
-	string s = HD._calculation->calculate_Compare(HD._graph->originalLength(eve->getPassengerByUserNum(userNum)), eve->getSize() , eve, HD._graph);
+	Handler HD(eve, "C://Users//arabi//Desktop//Graph.txt");
+	string s = HD._calculation->calculate_Compare(HD._graph->originalLength(eve->getPassengerByUserNum(userNum)), eve->getSize()+1 , eve, HD._graph);
 	return s;
+}
+
+void Server::makeEvent()
+{
+	for (int i = 0; i < SC->getSize(); i++) {
+		int j = ceil( double(SC->getSpot(i)->getNumberOfPassenger()) / 2);
+		for (int k = 0; k < j; k++) {
+			addPassengerToEvent(SC->getSpot(i)->getPassengers(k));
+		}
+	}
+	addPassengerToEvent(SC->getSpot(passengerSpot)->getPassengersByUserNum(userNum));
 }
