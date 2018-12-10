@@ -39,9 +39,6 @@
     <ClCompile Include="SpotController.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SpotView.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="User.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -49,6 +46,15 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Server.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="login.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="printMethod.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,9 +77,6 @@
     <ClInclude Include="PassengerController.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="PassengerView.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Spot.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -89,10 +92,13 @@
     <ClInclude Include="UserController.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="UserView.h">
+    <ClInclude Include="Server.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Server.h">
+    <ClInclude Include="login.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="printMethod.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -104,6 +110,9 @@
       <Filter>소스 파일</Filter>
     </Text>
     <Text Include="Graph.txt">
+      <Filter>소스 파일</Filter>
+    </Text>
+    <Text Include="sign.txt">
       <Filter>소스 파일</Filter>
     </Text>
   </ItemGroup>

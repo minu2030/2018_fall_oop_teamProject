@@ -87,11 +87,11 @@ unsigned int Spot::getNumberOfPassenger()
 	return passengers.size();
 }
 
-Passenger * Spot::getPassengersByUserNum(int i) //try_catch로 잡아야함
+Passenger * Spot::getPassengersByUserNum(int userNum) //try_catch로 잡아야함
 {
 	try {
 	for (int i = 0; i < passengers.size(); i++) {
-		if (passengers.at(i).getusernumber() == i) {
+		if (passengers.at(i).getusernumber() == userNum) {
 			return &passengers.at(i);
 		}
 	}

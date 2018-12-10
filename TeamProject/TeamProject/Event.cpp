@@ -1,4 +1,5 @@
 #include "Event.h"
+
 using namespace std;
 Event::Event()
 {
@@ -37,7 +38,7 @@ bool Event::eventDeletePassenger(Passenger * pass)
 void Event::eventOn(Spot* spot)
 {
 	for (int i = 0; i < size; i++) {
-		int userNum = passengerOnTaxi->getusernumber();
+		int userNum = passengerOnTaxi[i].getusernumber();
 		spot->erasePassengerByNum(userNum);
 	}
 }
@@ -45,15 +46,13 @@ void Event::eventOn(Spot* spot)
 string Event::eventPrint(int userN) // "½Â°´ÀÌ¸§,toPay"
 {
 	string result = getPassengerByUserNum(userN)->getName();
-	result += "," + getPassengerByUserNum(userN)->getToPay();
+	result += "," + to_string(getPassengerByUserNum(userN)->getToPay());
 	return result;
 }
 
 void Event::eventEnd()
 {
-	for (int i = 0; i < size; i++) {
-		delete &passengerOnTaxi[i];
-	}
+	size = 0;
 }
 
 void Event::eventSetToPay(int n, int gold)
@@ -71,15 +70,11 @@ Passenger* Event::getPassenger(int i) {
 
 Passenger * Event::getPassengerByUserNum(int userNumber)
 {
-	try {
+	
 		for (int i = 0; i < size; i++) {
 			if (userNumber == passengerOnTaxi[i].getusernumber()) {
 				return &passengerOnTaxi[i];
 			}
 		}
-	throw -1;
-	}
-	catch(exception e) {
-		e.what();
-	}
+	
 }

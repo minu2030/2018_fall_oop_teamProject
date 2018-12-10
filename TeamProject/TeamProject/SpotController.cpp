@@ -21,6 +21,11 @@ Spot* SpotController::getSpot(string startSpot)
 	}
 }
 
+Spot * SpotController::getSpot(int index)
+{
+	return &spots.at(index);
+}
+
 void SpotController::addPassenger(Passenger * pass)
 {
 	for (unsigned int i = 0; i < spots.size(); i++) {
@@ -48,5 +53,20 @@ void SpotController::printAllSpot()
 	for (unsigned int i = 0; i < spots.size(); i++) {
 		cout << spots.at(i).getStartSpot() << endl;
 	}
+}
+
+int SpotController::getSize()
+{
+	return spots.size();
+}
+
+bool SpotController::SpotContain(string s)
+{
+	for(int i =0; spotList[i] != "\0" ;i++)
+	{
+		if (spotList[i] == s)
+			return true;
+	}
+	return false;
 }
 

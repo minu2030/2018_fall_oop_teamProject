@@ -23,12 +23,14 @@
     <ClCompile Include="Event.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Handler.cpp" />
+    <ClCompile Include="login.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Passenger.cpp" />
     <ClCompile Include="PassengerController.cpp" />
+    <ClCompile Include="printMethod.cpp" />
     <ClCompile Include="Server.cpp" />
     <ClCompile Include="Spot.cpp" />
     <ClCompile Include="SpotController.cpp" />
-    <ClCompile Include="SpotView.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UserController.cpp" />
   </ItemGroup>
@@ -37,20 +39,21 @@
     <ClInclude Include="Event.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="Handler.h" />
+    <ClInclude Include="login.h" />
     <ClInclude Include="Passenger.h" />
     <ClInclude Include="PassengerController.h" />
-    <ClInclude Include="PassengerView.h" />
+    <ClInclude Include="printMethod.h" />
     <ClInclude Include="Server.h" />
     <ClInclude Include="Spot.h" />
     <ClInclude Include="SpotController.h" />
     <ClInclude Include="SpotView.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="UserController.h" />
-    <ClInclude Include="UserView.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Graph.txt" />
     <Text Include="passenger.txt" />
+    <Text Include="sign.txt" />
     <Text Include="userInfo.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -71,6 +74,7 @@
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -84,6 +88,7 @@
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
