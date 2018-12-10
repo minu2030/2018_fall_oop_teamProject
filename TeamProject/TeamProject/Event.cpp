@@ -70,11 +70,10 @@ Passenger* Event::getPassenger(int i) {
 
 Passenger * Event::getPassengerByUserNum(int userNumber)
 {
-	
-		for (int i = 0; i < size; i++) {
-			if (userNumber == passengerOnTaxi[i].getusernumber()) {
-				return &passengerOnTaxi[i];
-			}
+	for (int i = 0; i < size; i++) {
+		if (userNumber == passengerOnTaxi[i].getusernumber()) {
+			return &passengerOnTaxi[i];
 		}
-	
+	}
+
 }

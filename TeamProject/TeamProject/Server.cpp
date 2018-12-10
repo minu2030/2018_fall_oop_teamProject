@@ -66,7 +66,7 @@ string Server::proceedEvent()
 	}
 	eventOn(&eve.at(temp), passengerSpot);
 
-	Handler HD(&eve.at(temp), "C://Users//arabi//Desktop//Graph.txt");
+	Handler HD(&eve.at(temp), "Graph.txt");
 	HD.allocCost(&eve.at(temp));
 	return eventEnd(&eve.at(temp));
 }
@@ -151,7 +151,7 @@ string Server::proceedBeforeEvent2()
 
 string Server::taxiListOfCost(Event* eve)
 {
-	Handler HD(eve, "C://Users//arabi//Desktop//Graph.txt");
+	Handler HD(eve, "Graph.txt");
 	string s = HD._calculation->calculate_Compare(HD._graph->originalLength(eve->getPassengerByUserNum(userNum)), eve->getSize() , eve, HD._graph);
 	return s;
 }
